@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/mainFragment">
+    <fragment
+        android:id="@+id/loginCaochFragment3"
+        android:name="com.example.myfootappv1.LoginCaochFragment"
+        android:label="fragment_login_caoch"
+        tools:layout="@layout/fragment_login_caoch" >
+        <action
+            android:id="@+id/action_loginCaochFragment3_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.myfootappv1.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_profilFragment"
+            app:destination="@id/profilFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profilFragment"
+        android:name="com.example.myfootappv1.ProfilFragment"
+        android:label="fragment_profil"
+        tools:layout="@layout/fragment_profil" />
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.myfootappv1.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_loginCaochFragment3"
+            app:destination="@id/loginCaochFragment3" />
+    </fragment>
+</navigation>
