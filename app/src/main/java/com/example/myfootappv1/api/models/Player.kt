@@ -1,11 +1,11 @@
 package com.example.myfootappv1.api.models
 
 data class Player(
-    val birthDate: String,
-    val firtstName: String,
-    val height: Double,
-    val id: Int,
-    val lastName: String,
-    val team: Team,
-    val weight: Double
+    var birthDate: String,
+    var firtstName: String,
+    var height: Double,
+    var id: Int,
+    var lastName: String,
+    var team: Team,
+    var weight: Double
 )

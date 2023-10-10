@@ -1,15 +1,22 @@
 package com.example.myfootappv1.fragments
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.example.myfootappv1.PlayerViewModel
+import com.example.myfootappv1.MainViewModelFactory
 import com.example.myfootappv1.R
 import com.example.myfootappv1.databinding.FragmentLoginBinding
 
 class LoginFragment : Fragment() {
+
+    private val viewModel : PlayerViewModel by viewModels(){ MainViewModelFactory(requireContext())}
 
     private var _binding : FragmentLoginBinding? = null
     private val binding : FragmentLoginBinding
@@ -28,7 +35,17 @@ class LoginFragment : Fragment() {
         }
 
         binding.btnRegisterLoginFragment.setOnClickListener{
-            findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
+            val str = binding.etEmailLoginFragment.text?.toString()
+            if (str.isNullOrBlank()) {
+                Toast.makeText(requireContext(), "Entrez le mail", Toast.LENGTH_LONG).show()
+            }
+            else
+            {
+                val id: Int = str.toInt()
+
+                Log.d("PLAYER", viewModel.getPlayer(id).toString())
+                findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
+            }
         }
 
         return binding.root

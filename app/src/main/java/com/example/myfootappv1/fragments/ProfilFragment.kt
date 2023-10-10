@@ -5,25 +5,27 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.example.myfootappv1.R
+import com.example.myfootappv1.databinding.FragmentHomeBinding
+import com.example.myfootappv1.databinding.FragmentProfilBinding
 
 class ProfilFragment : Fragment() {
 
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-//            param1 = it.getString(ARG_PARAM1)
-//            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private var _binding : FragmentProfilBinding? = null
+    private val binding : FragmentProfilBinding
+        get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profil, container, false)
+        _binding = FragmentProfilBinding.inflate(inflater, container, false)
+
+        binding.btnPreviousProfilFragment.setOnClickListener{
+            findNavController().navigate(R.id.action_profilFragment_to_homeFragment)
+        }
+        return binding.root
     }
 
     override fun onDestroyView() {
