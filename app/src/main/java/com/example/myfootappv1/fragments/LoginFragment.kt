@@ -1,4 +1,4 @@
-package com.example.myfootappv1
+package com.example.myfootappv1.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.example.myfootappv1.R
 import com.example.myfootappv1.databinding.FragmentLoginBinding
 
 class LoginFragment : Fragment() {
@@ -19,13 +20,17 @@ class LoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
 
         binding.btnLoginFragment.setOnClickListener {
-            findNavController().navigate(R.id.action_loginCaochFragment3_to_homeFragment)
+            findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
         }
 
-        binding.btnRegisterLoginFragment
+        binding.btnRegisterLoginFragment.setOnClickListener{
+            findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
+        }
+
         return binding.root
     }
 

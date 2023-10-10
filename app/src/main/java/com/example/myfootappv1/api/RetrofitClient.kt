@@ -16,7 +16,7 @@ object RequestInterceptor : Interceptor {
 }
 
 object RetrofitClient {
-    private const val BASE_URL = "https://api.agify.io/"
+    private const val BASE_URL = "http://10.0.2.2:8000/"
 
     val client: Retrofit by lazy {
         val client = Retrofit.Builder()

@@ -6,37 +6,89 @@
     app:startDestination="@id/loginFragment">
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.myfootappv1.LoginFragment"
+        android:name="com.example.myfootappv1.fragments.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login">
         <action
-            android:id="@+id/action_loginCaochFragment3_to_homeFragment"
+            android:id="@+id/action_loginFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
         <action
-            android:id="@+id/action_loginFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/register1Fragment" />
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.myfootappv1.HomeFragment"
+        android:name="com.example.myfootappv1.fragments.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_homeFragment_to_profilFragment"
             app:destination="@id/profilFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_teamsFragment"
+            app:destination="@id/teamsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_sessionsFragment"
+            app:destination="@id/sessionsFragment" />
     </fragment>
     <fragment
         android:id="@+id/profilFragment"
-        android:name="com.example.myfootappv1.ProfilFragment"
+        android:name="com.example.myfootappv1.fragments.ProfilFragment"
         android:label="fragment_profil"
-        tools:layout="@layout/fragment_profil" />
+        tools:layout="@layout/fragment_profil" >
+        <action
+            android:id="@+id/action_profilFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
     <fragment
-        android:id="@+id/mainFragment"
-        android:name="com.example.myfootappv1.Register1Fragment"
+        android:id="@+id/register1Fragment"
+        android:name="com.example.myfootappv1.fragments.Register1Fragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_register1" >
         <action
-            android:id="@+id/action_mainFragment_to_profilFragment"
-            app:destination="@id/profilFragment" />
+            android:id="@+id/action_register1Fragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/teamsFragment"
+        android:name="com.example.myfootappv1.fragments.TeamsFragment"
+        android:label="fragment_teams"
+        tools:layout="@layout/fragment_teams" >
+        <action
+            android:id="@+id/action_teamsFragment_to_oneTeamFragment"
+            app:destination="@id/oneTeamFragment" />
+        <action
+            android:id="@+id/action_teamsFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/oneTeamFragment"
+        android:name="com.example.myfootappv1.fragments.OneTeamFragment"
+        android:label="fragment_one_team"
+        tools:layout="@layout/fragment_one_team" >
+        <action
+            android:id="@+id/action_oneTeamFragment_to_teamsFragment"
+            app:destination="@id/teamsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sessionsFragment"
+        android:name="com.example.myfootappv1.fragments.SessionsFragment"
+        android:label="fragment_sessions"
+        tools:layout="@layout/fragment_sessions" >
+        <action
+            android:id="@+id/action_sessionsFragment_to_oneSessionFragment"
+            app:destination="@id/oneSessionFragment" />
+        <action
+            android:id="@+id/action_sessionsFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/oneSessionFragment"
+        android:name="com.example.myfootappv1.fragments.OneSessionFragment"
+        android:label="fragment_one_session"
+        tools:layout="@layout/fragment_one_session" >
+        <action
+            android:id="@+id/action_oneSessionFragment_to_sessionsFragment"
+            app:destination="@id/sessionsFragment" />
     </fragment>
 </navigation>
