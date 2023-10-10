@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Register1Fragment">
+
+
+    <TextView
+        android:id="@+id/tv_first_name_register_fragment"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="140dp"
+        android:text="Prénom : "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_first_name_register_fragment"
+        android:layout_width="193dp"
+        android:layout_height="41dp"
+        android:ems="10"
+        android:hint="Lionel"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_first_name_register_fragment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.544"
+        app:layout_constraintStart_toEndOf="@+id/tv_first_name_register_fragment"
+        app:layout_constraintTop_toTopOf="@+id/tv_first_name_register_fragment"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tv_last_name_register_fragment"
+        android:layout_width="37dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="52dp"
+        android:text="Nom : "
+        app:layout_constraintBottom_toTopOf="@+id/tv_first_name_register_fragment"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.697" />
+
+    <EditText
+        android:id="@+id/et_last_name_register_fragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:ems="10"
+        android:hint="Messi"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_last_name_register_fragment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/tv_last_name_register_fragment"
+        app:layout_constraintTop_toTopOf="@+id/tv_last_name_register_fragment"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tv_birthday_register_fragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="44dp"
+        android:text="Date de naissance :"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_first_name_register_fragment" />
+
+    <EditText
+        android:id="@+id/et_birthday_register_fragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="24-06-1987"
+        android:inputType="date"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_birthday_register_fragment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_birthday_register_fragment"
+        app:layout_constraintTop_toTopOf="@+id/tv_birthday_register_fragment" />
+
+    <RadioGroup
+        android:layout_width="154dp"
+        android:layout_height="114dp"
+        app:layout_constraintBottom_toBottomOf="@+id/et_type_profile_register_fragment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toEndOf="@+id/et_type_profile_register_fragment"
+        app:layout_constraintTop_toTopOf="@+id/et_type_profile_register_fragment"
+        app:layout_constraintVertical_bias="0.094">
+
+        <RadioButton
+            android:id="@+id/rbtn_player_register_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Player" />
+
+        <RadioButton
+            android:id="@+id/rbtn_coach_register_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Coach" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/et_type_profile_register_fragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="48dp"
+        android:text="Type de profile : "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_birthday_register_fragment" />
+
+    <TextView
+        android:id="@+id/tv_mail_register_fragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="112dp"
+        android:text="Mail :"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_type_profile_register_fragment" />
+
+    <EditText
+        android:id="@+id/et_mail_register_fragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="lio.messi10@miami.com"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_mail_register_fragment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_mail_register_fragment"
+        app:layout_constraintTop_toTopOf="@+id/tv_mail_register_fragment" />
+
+    <TextView
+        android:id="@+id/tv_password_register_fragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="48dp"
+        android:text="Password"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_mail_register_fragment" />
+
+    <EditText
+        android:id="@+id/et_password_register_fragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:text="*******"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_password_register_fragment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.643"
+        app:layout_constraintStart_toEndOf="@+id/tv_password_register_fragment"
+        app:layout_constraintTop_toTopOf="@+id/tv_password_register_fragment"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/btn_confirmation_register_fragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Soumettre"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_password_register_fragment" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

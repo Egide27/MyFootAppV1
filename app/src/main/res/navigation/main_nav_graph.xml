@@ -3,15 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_nav_graph"
-    app:startDestination="@id/mainFragment">
+    app:startDestination="@id/loginFragment">
     <fragment
-        android:id="@+id/loginCaochFragment3"
-        android:name="com.example.myfootappv1.LoginCaochFragment"
-        android:label="fragment_login_caoch"
-        tools:layout="@layout/fragment_login_caoch" >
+        android:id="@+id/loginFragment"
+        android:name="com.example.myfootappv1.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_loginCaochFragment3_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
@@ -29,11 +32,11 @@
         tools:layout="@layout/fragment_profil" />
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.myfootappv1.MainFragment"
+        android:name="com.example.myfootappv1.Register1Fragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" >
+        tools:layout="@layout/fragment_register1" >
         <action
-            android:id="@+id/action_mainFragment_to_loginCaochFragment3"
-            app:destination="@id/loginCaochFragment3" />
+            android:id="@+id/action_mainFragment_to_profilFragment"
+            app:destination="@id/profilFragment" />
     </fragment>
 </navigation>

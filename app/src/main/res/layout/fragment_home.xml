@@ -1,15 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HomeFragment">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ici, les différentes options du coach/joueur"
-        tools:layout_editor_absoluteX="56dp"
-        tools:layout_editor_absoluteY="194dp" />
+    <Button
+        android:id="@+id/btn_profile_home_fragment"
+        android:layout_width="191dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="128dp"
+        android:text="Mon profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_teams_home_fragment"
+        android:layout_width="191dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="96dp"
+        android:text="Mes équipes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_profile_home_fragment" />
+
+    <Button
+        android:id="@+id/btn_session_home_fragment"
+        android:layout_width="191dp"
+        android:layout_height="68dp"
+        android:text="Mes sessions"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_teams_home_fragment"
+        app:layout_constraintVertical_bias="0.29" />
 </androidx.constraintlayout.widget.ConstraintLayout>
