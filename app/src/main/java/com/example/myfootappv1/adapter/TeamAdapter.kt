@@ -11,7 +11,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class TeamAdapter (val teamEventListener: TeamEventListener) : RecyclerView.Adapter<TeamAdapter.ViewHolder>() {
     interface TeamEventListener {
-        fun gotoPlayers()
+        fun gotoPlayers(team : Team)
 //        fun onDelete(position : Int)
 //        fun onEdit(team: Team, position : Int)
     }
@@ -44,7 +44,7 @@ class TeamAdapter (val teamEventListener: TeamEventListener) : RecyclerView.Adap
         holder.tvTeamName.text = name
         holder.tvTeamCategory.text = category
         holder.btnGoToPlayers.setOnClickListener {
-            teamEventListener.gotoPlayers()
+            teamEventListener.gotoPlayers(team)
        }
 //        holder.itemView.setOnClickListener {
 //            findN

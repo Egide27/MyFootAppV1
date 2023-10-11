@@ -13,6 +13,7 @@ import com.example.myfootappv1.TeamsViewModelFactory
 import com.example.myfootappv1.PlayerViewModel
 import com.example.myfootappv1.R
 import com.example.myfootappv1.TeamsViewModel
+import com.example.myfootappv1.api.models.Team
 import com.example.myfootappv1.databinding.FragmentTeamsBinding
 
 class TeamsFragment : Fragment(), TeamAdapter.TeamEventListener {
@@ -64,7 +65,7 @@ class TeamsFragment : Fragment(), TeamAdapter.TeamEventListener {
         fun newInstance(param1: String, param2: String) =
             TeamsFragment()
     }
-    override fun gotoPlayers(){
+    override fun gotoPlayers(team : Team){
         findNavController().navigate(R.id.action_teamsFragment_to_oneTeamFragment)
     }
 

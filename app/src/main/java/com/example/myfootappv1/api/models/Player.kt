@@ -6,6 +6,6 @@ data class Player(
     var height: Double,
     var id: Int,
     var lastName: String,
-    var team: Team,
+    var team: Team?,
     var weight: Double
 )
