@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.myfootappv1.R
 import com.example.myfootappv1.databinding.FragmentSessionsBinding
-import com.example.myfootappv1.databinding.FragmentTeamsBinding
 
 class SessionsFragment : Fragment() {
 
@@ -27,6 +26,11 @@ class SessionsFragment : Fragment() {
         }
 
         return binding.root
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 
     companion object {

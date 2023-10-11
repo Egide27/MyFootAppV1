@@ -16,20 +16,21 @@ import retrofit2.Retrofit
 class PlayerViewModel(client : Retrofit) : ViewModel() {
 
     private val api = client.create(PlayerApi::class.java)
-
     private val _player : MutableLiveData<Player> = MutableLiveData()
+
+
     val player : LiveData<Player>
         get() = _player
 
     fun getPlayer(id : Int){
         viewModelScope.launch {
             _player.value = api.findById(id)
-            Log.d("View model", "getPlayer: iL est la ou pas ? ${_player.value} ")
+//            Log.d("View model", "getPlayer: iL est la ou pas ? ${_player.value} ")
         }
     }
 }
 
-class MainViewModelFactory(val context : Context) : ViewModelProvider.Factory{
+class PlayerViewModelFactory(val context : Context) : ViewModelProvider.Factory{
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         return PlayerViewModel(RetrofitClient.getClient(context)) as T
     }

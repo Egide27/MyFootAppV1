@@ -10,13 +10,13 @@ import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.myfootappv1.PlayerViewModel
-import com.example.myfootappv1.MainViewModelFactory
+import com.example.myfootappv1.PlayerViewModelFactory
 import com.example.myfootappv1.R
 import com.example.myfootappv1.databinding.FragmentLoginBinding
 
 class LoginFragment : Fragment() {
 
-    private val viewModel : PlayerViewModel by viewModels(){ MainViewModelFactory(requireContext())}
+    private val viewModel : PlayerViewModel by viewModels(){ PlayerViewModelFactory(requireContext()) }
 
     private var _binding : FragmentLoginBinding? = null
     private val binding : FragmentLoginBinding
@@ -35,14 +35,13 @@ class LoginFragment : Fragment() {
         }
 
         binding.btnRegisterLoginFragment.setOnClickListener{
-            val str = binding.etEmailLoginFragment.text?.toString()
-            if (str.isNullOrBlank()) {
-                Toast.makeText(requireContext(), "Entrez le mail", Toast.LENGTH_LONG).show()
+            val mail = binding.etEmailLoginFragment.text?.toString()
+            val mdp = binding.etPswdLoginFragment.text?.toString()
+            if (mail.isNullOrBlank()){
+                Toast.makeText(requireContext(), "Entrez un mail ET un mot de passe ", Toast.LENGTH_LONG).show()
             }
-            else
-            {
-                val id: Int = str.toInt()
-
+            else {
+                val id: Int = mail.toInt()
                 Log.d("PLAYER", viewModel.getPlayer(id).toString())
                 findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
             }
