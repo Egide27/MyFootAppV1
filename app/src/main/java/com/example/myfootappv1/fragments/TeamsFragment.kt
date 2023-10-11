@@ -1,5 +1,4 @@
 package com.example.myfootappv1.fragments
-
 import TeamAdapter
 import android.os.Bundle
 import android.util.Log
@@ -65,6 +64,10 @@ class TeamsFragment : Fragment(), TeamAdapter.TeamEventListener {
         fun newInstance(param1: String, param2: String) =
             TeamsFragment()
     }
+    override fun gotoPlayers(){
+        findNavController().navigate(R.id.action_sessionsFragment_to_oneSessionFragment)
+    }
+
 
     fun obserVm(){
         viewModel.teams.observe(viewLifecycleOwner){
@@ -72,3 +75,4 @@ class TeamsFragment : Fragment(), TeamAdapter.TeamEventListener {
         }
     }
 }
+
