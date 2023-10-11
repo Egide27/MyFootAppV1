@@ -24,6 +24,10 @@ class TeamsViewModel(client : Retrofit) : ViewModel(){
     val teams : LiveData<List<Team>>
         get() = _teams
 
+    private val _team: MutableLiveData<Team> = MutableLiveData()
+    val team : LiveData<Team>
+        get() = _team
+
     private val _players: MutableLiveData<List<Player>> = MutableLiveData(listOf())
     val players : LiveData<List<Player>>
         get() = _players
@@ -50,6 +54,23 @@ class TeamsViewModel(client : Retrofit) : ViewModel(){
                 val result = api.getPlayersByTeam(id)
                 _players.value = result
                 Log.i("ICI", "getPlayersByTeam: ${players.value!!.size}")
+            }
+            catch (e : HttpException){
+                error.value = e.code()
+            }
+            catch (e: Exception){
+                Log.d("ERROR", e.message.toString())
+            }
+
+        }
+    }
+
+    fun getTeam(id : Int){
+        viewModelScope.launch {
+            try {
+                val result = api.getTeam(id)
+                _team.value = result
+                Log.i("ICI", "getTeam : ${team.value}")
             }
             catch (e : HttpException){
                 error.value = e.code()

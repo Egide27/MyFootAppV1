@@ -1,20 +1,19 @@
 package com.example.myfootappv1.fragments
 import TeamAdapter
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.myfootappv1.TeamsViewModelFactory
-import com.example.myfootappv1.PlayerViewModel
 import com.example.myfootappv1.R
 import com.example.myfootappv1.TeamsViewModel
+import com.example.myfootappv1.TeamsViewModelFactory
 import com.example.myfootappv1.api.models.Team
 import com.example.myfootappv1.databinding.FragmentTeamsBinding
+
 
 class TeamsFragment : Fragment(), TeamAdapter.TeamEventListener {
 
@@ -66,7 +65,9 @@ class TeamsFragment : Fragment(), TeamAdapter.TeamEventListener {
             TeamsFragment()
     }
     override fun gotoPlayers(team : Team){
-        findNavController().navigate(R.id.action_teamsFragment_to_oneTeamFragment)
+        val bundle = Bundle()
+        bundle.putInt(OneTeamFragment.paramTeamId, team.id)
+        findNavController().navigate(R.id.action_teamsFragment_to_oneTeamFragment, bundle)
     }
 
 

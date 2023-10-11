@@ -9,6 +9,9 @@ interface TeamsApi {
     @GET("teams")
     suspend fun getAll() : List<Team>
 
+    @GET("teams/{id}")
+    suspend fun getTeam(@Path("id") id : Int) : Team
+
     @GET("teams/{id}/players")
     suspend fun getPlayersByTeam(@Path("id") id : Int) : List<Player>
 }
