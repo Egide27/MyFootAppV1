@@ -65,7 +65,7 @@ class TeamsFragment : Fragment(), TeamAdapter.TeamEventListener {
             TeamsFragment()
     }
     override fun gotoPlayers(){
-        findNavController().navigate(R.id.action_sessionsFragment_to_oneSessionFragment)
+        findNavController().navigate(R.id.action_teamsFragment_to_oneTeamFragment)
     }
 
 
