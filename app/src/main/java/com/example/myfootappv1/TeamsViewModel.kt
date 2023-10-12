@@ -51,12 +51,15 @@ class TeamsViewModel(client : Retrofit) : ViewModel(){
     fun getPlayersByTeam(id : Int){
         viewModelScope.launch {
             try {
+                Log.i("ICI", "getPlayersByTeam: VOILA")
                 val result = api.getPlayersByTeam(id)
+                Log.i("ICI", "getPlayersByTeam: ${result}")
                 _players.value = result
                 Log.i("ICI", "getPlayersByTeam: ${players.value!!.size}")
             }
             catch (e : HttpException){
                 error.value = e.code()
+                Log.d("ERROR", e.code().toString(), e)
             }
             catch (e: Exception){
                 Log.d("ERROR", e.message.toString())
